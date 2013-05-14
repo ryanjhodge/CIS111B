@@ -7,7 +7,7 @@ import com.cis111b.model.*;
 
 public class SearchTableModel extends AbstractTableModel {
 
-	/**
+	/** Table Model for Search Results Table
 	 * 
 	 */
 	private static final long serialVersionUID = 2057827880440368438L;

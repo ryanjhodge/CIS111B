@@ -9,6 +9,10 @@ import gov.usgs.itis.itis_service.data.*;
 
 import com.google.gson.Gson;
 
+/**
+ * @author Ryan
+ *
+ */
 public class TaxonomicUnit {
 	
 	protected String species;
@@ -19,7 +23,7 @@ public class TaxonomicUnit {
 	protected String commonName;
 	protected Integer taxonomicSerialNumber;
 	
-	/**
+	/** Constructor for Taxonomic Unit
 	 * @param taxonomicSerialNumber
 	 */
 	public TaxonomicUnit(Integer taxonomicSerialNumber) {

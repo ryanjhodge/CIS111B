@@ -12,16 +12,15 @@ import javax.swing.JTable;
 
 import com.cis111b.model.TaxonomicUnit;
 
+/** Represents Search Results output by Search class
+ * @author Ryan
+ *
+ */
 public class SearchResults extends JFrame {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 6426273903860992190L;
 	private JPanel contentPane;
 	private JTable table;
-
-
 
 	/**
 	 * Create the frame.

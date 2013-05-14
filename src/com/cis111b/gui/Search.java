@@ -54,7 +54,7 @@ public class Search extends JFrame {
 	}
 
 	/**
-	 * Create the frame..l
+	 * Create the frame..
 	 */
 	public Search() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,14 +113,10 @@ public class Search extends JFrame {
 					BufferedReader br = new BufferedReader(
 						new InputStreamReader(urlInputStream, "UTF-8"));
 					StringBuilder sb = new StringBuilder();
-					 
 					String line;
-					
 					while ((line = br.readLine()) != null) {
 						sb.append(line);
 					}
-					
-					//System.out.println(sb.toString());
 					Gson gson = new Gson();
 					SvcCommonNameList commonNames = new SvcCommonNameList();
 					ArrayList<TaxonomicUnit> results = new ArrayList<TaxonomicUnit>();
@@ -129,30 +125,23 @@ public class Search extends JFrame {
 					
 					
 					for (CommonNames name: commonNames.getCommonNames()) {
-						// System.out.println(name.getCommonName());
-						//TaxonomicUnit result = new TaxonomicUnit(name.getTsn());
-						
-						
-						//Object result = (Object)resultClass.getConstructor(resultClass);
+					
 						try {
 							TaxonomicUnit result = resultClass.getDeclaredConstructor(Integer.class).newInstance(name.getTsn());
-							//resultClass.getDeclaredConstructor(Integer.class).newInstance(name.getTsn());
+
 							if (result.getKingdom() == null) {
 								continue;
 							}
+							
 							result.setCommonName(name.getCommonName());
 							results.add(result);
 							System.out.println (result.getCommonName());
 						} catch (InvocationTargetException e) {
-							//e.printStackTrace();
 							System.err.println("Caught");
 							continue;
 						}
 					}
 						
-						
-					
-					//System.out.println(results.size());
 					SearchResults page = new SearchResults(results);
 		            page.setVisible(true);
 			 
