@@ -6,7 +6,7 @@ import com.cis111b.model.*;
 
 public class SearchDriver {
 
-	/**
+	/** Driver to test the SearchResults class
 	 * @param args
 	 */
 	public static void main(String[] args) {

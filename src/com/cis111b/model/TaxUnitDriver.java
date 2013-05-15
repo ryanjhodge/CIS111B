@@ -4,14 +4,18 @@ import com.cis111b.model.TaxonomicUnit;
 
 public class TaxUnitDriver {
 
-	/**
+	/** Tests com.cis111b.model classes
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		TaxonomicUnit test = new Animalia(4456);
-		//TaxonomicUnit plant = new Plantae(552780);
-		//Animalia cat = new Animalia(552780);
-		System.out.println(test.getFamily());
+		TaxonomicUnit tiger = new Animalia(183805);
+		Plantae maple = new Tracheophyta(28728);
+		System.out.println("Felidae:" + tiger.getFamily());
+		System.out.println("Tracheophyta:" + maple.getDivision());
+		
+		//should fail trying to instantiate tiger as a plant:
+		@SuppressWarnings("unused")
+		Plantae tigerFail = new Plantae(183805);
 
 	}
 
